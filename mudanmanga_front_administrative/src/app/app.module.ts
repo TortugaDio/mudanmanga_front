@@ -154,6 +154,8 @@ import interactionPlugin from '@fullcalendar/interaction';
 import { LoginMudanscanlationComponent } from './mudanscanlation/modulos/view/login/login-mudanscanlation.component';
 import { MainMudanscanlationComponent } from './mudanscanlation/modulos/view/main/main-mudanscanlation.component';
 import { LoginMudanscanlationService } from './mudanscanlation/modulos/service/login-mudanscanlation.service';
+import { UserRegisterComponent } from './mudanscanlation/modulos/view/registro/user-register.component';
+import { UserService } from './mudanscanlation/modulos/service/user.service';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -299,6 +301,7 @@ FullCalendarModule.registerPlugins([
 
         MainMudanscanlationComponent,
         LoginMudanscanlationComponent,
+        UserRegisterComponent,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
@@ -306,7 +309,7 @@ FullCalendarModule.registerPlugins([
         PhotoService, ProductService, MenuService, AppBreadcrumbService, ConfigService,
 
 
-        LoginMudanscanlationService
+        LoginMudanscanlationService,UserService
     ],
     bootstrap: [AppComponent]
 })

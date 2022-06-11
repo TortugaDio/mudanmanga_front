@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
 import { LoginMudanscanlationService } from '../../service/login-mudanscanlation.service';
+import { UserRegisterComponent } from '../registro/user-register.component';
 
 @Component({
   selector: 'app-login-mudanscanlation',
@@ -10,6 +11,8 @@ import { LoginMudanscanlationService } from '../../service/login-mudanscanlation
 })
 export class LoginMudanscanlationComponent implements OnInit {
 
+  @ViewChild(UserRegisterComponent, { static: false }) userRegisterComponent: UserRegisterComponent;
+  
   constructor(
     public app: AppComponent,
     private loginMudanscanlationService: LoginMudanscanlationService,
@@ -24,5 +27,9 @@ export class LoginMudanscanlationComponent implements OnInit {
       console.log(resp);
       this.router.navigate([''], { skipLocationChange: true });
     })
+  }
+
+  registro(){
+     this.userRegisterComponent.iniciarComponente();
   }
 }

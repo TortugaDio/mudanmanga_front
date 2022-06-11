@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {AppComponent} from './app.component';
-import {AppMainComponent} from './app.main.component';
+import { Component, OnInit } from '@angular/core';
+import { AppComponent } from './app.component';
+import { AppMainComponent } from './app.main.component';
 
 @Component({
     selector: 'app-menu',
@@ -10,10 +10,18 @@ export class AppMenuComponent implements OnInit {
 
     public model: any[];
 
-    constructor(public app: AppComponent, public appMain: AppMainComponent) {}
+    constructor(public app: AppComponent, public appMain: AppMainComponent) { }
 
     ngOnInit() {
         this.model = [
+            {
+                label: 'Configuración', icon: 'pi pi-home',
+                items: [
+                    { label: 'información General', icon: 'pi pi-fw pi-home', routerLink: ['/'] }
+                ]
+            }
+        ]
+        /* this.model = [
             {
                 label: 'Favorites', icon: 'pi pi-home',
                 items: [
@@ -124,6 +132,6 @@ export class AppMenuComponent implements OnInit {
                     }
                 ]
             }
-        ];
+        ]; */
     }
 }

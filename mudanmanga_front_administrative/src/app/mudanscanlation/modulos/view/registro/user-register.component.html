@@ -1,0 +1,38 @@
+<p-dialog header="Header" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
+    [resizable]="false">
+    <p-card>
+        <div class="p-grid">
+            <div class="p-col-12">
+                <div class="p-fluid p-formgrid p-grid">
+                    <div class="p-field p-col-12 p-md-3">
+                      <!--   <label>Nombre</label> -->
+                        <input pInputText type="text" [(ngModel)]="dto.firstName"  placeholder="Nombre"/>
+                    </div>
+                    <div class="p-field p-col-12 p-md-3">
+                     <!--    <label>Segundo Nombre</label> -->
+                        <input pInputText type="text" [(ngModel)]="dto.middleName" placeholder="Segundo Nombre"/>
+                    </div>
+                    <div class="p-field p-col-12 p-md-3">
+                       <!--  <label>Apellidos</label> -->
+                        <input pInputText type="text" [(ngModel)]="dto.lastName" placeholder="Apellidos"/>
+                    </div>
+                    <div class="p-field p-col-12 p-md-3">
+                      <!--   <label>Correo</label> -->
+                        <input pInputText type="text" [(ngModel)]="dto.email" placeholder="Correo"/>
+                    </div>
+                    <div class="p-field p-col-12 p-md-3">
+                      <!--   <label>Usuario</label> -->
+                        <input pInputText type="text" [(ngModel)]="dto.nickname" placeholder="Usuario"/>
+                    </div>
+                    <div class="p-field p-col-12 p-md-3">
+                     <!--    <label>Contraseña</label> -->
+                        <input pInputText type="text" [(ngModel)]="dto.password" placeholder="Contraseña"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </p-card>
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="register()" label="Registrar" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog>
